@@ -1,0 +1,5 @@
+// Simple wrapper to avoid wrapping every controller method in try/catch blocks
+const asyncHandler = fn => (req, res, next) =>
+  Promise.resolve(fn(req, res, next)).catch(next);
+
+module.exports = asyncHandler;
