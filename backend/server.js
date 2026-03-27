@@ -10,6 +10,9 @@ dotenv.config();
 // Connect to database
 connectDB();
 
+// Initialize automated health monitor
+require('./utils/cron');
+
 const app = express();
 
 // Body parser

@@ -29,6 +29,13 @@ const taskSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  dependsOn: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Task'
+  }],
+  resolutionNotes: {
+    type: String,
+  },
   createdAt: {
     type: Date,
     default: Date.now,
